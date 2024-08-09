@@ -53,6 +53,8 @@ class CrucibleClient:
         url = f"{self.base_url}/submission/{submission_id}/runs/{run_id}"
         response = requests.delete(url, headers=self.headers)
         response.raise_for_status()
+        if response.status_code == 204 and response.text == "":
+            return response
         try:
             return response.json()
         except JSONDecodeError:
@@ -74,6 +76,8 @@ class CrucibleClient:
         url = f"{self.base_url}/submission/{submission_id}/evidence/{evidence_id}"
         response = requests.delete(url, headers=self.headers)
         response.raise_for_status()
+        if response.status_code == 204 and response.text == "":
+            return response
         try:
             return response.json()
         except JSONDecodeError:
@@ -84,6 +88,8 @@ class CrucibleClient:
         url = f"{self.base_url}/submission/{submission_id}"
         response = requests.delete(url, headers=self.headers)
         response.raise_for_status()
+        if response.status_code == 204 and response.text == "":
+            return response
         try:
             return response.json()
         except JSONDecodeError:
