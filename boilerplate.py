@@ -10,9 +10,9 @@ from inspect_ai.solver import generate, prompt_template
 from crucible_api import CrucibleClient
 
 # IMPORTANT! You need to add your Crucible API key to the .env file in this working directory.
-# You can get this at https://staging-crucible.dreadnode.io/account (you may need to sign up!)
+# You can get this at https://crucible.dreadnode.io/account (you may need to sign up!)
 load_dotenv()
-BASE_URL = "https://vllm.i.staging-crucible.dreadnode.io/v1"
+BASE_URL = "https://olmo.i.crucible.dreadnode.io/v1"
 API_KEY = os.getenv("CRUCIBLE_API_KEY")
 
 # Connect to the OLMo API and use it to generate a response 
